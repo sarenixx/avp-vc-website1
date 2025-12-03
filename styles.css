@@ -212,6 +212,54 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--bg-color);
 }
 
+/* Portfolio Ticker */
+.portfolio-ticker {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--light-bg);
+    padding: 40px 0;
+    margin: 60px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ticker-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.ticker-track {
+    display: flex;
+    gap: 60px;
+    animation: scroll-left 40s linear infinite;
+    width: fit-content;
+    min-width: 200%;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.ticker-item {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    white-space: nowrap;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.ticker-item:hover {
+    color: var(--accent-color);
+}
+
 .portfolio h2,
 .team h2,
 .programs h2,
