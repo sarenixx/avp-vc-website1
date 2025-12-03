@@ -156,7 +156,7 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
     margin-left: -300px;
     margin-top: -300px;
     opacity: 0.03;
-    transform: translateY(0) scale(5);
+    transform: translateY(0) scale(3);
     will-change: transform;
 }
 
@@ -608,7 +608,7 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
 
 /* About Section */
 .about {
-    padding: 140px 40px;
+    padding: 60px 40px;
     background-color: var(--bg-color);
     border-top: 1px solid var(--border-color);
 }
