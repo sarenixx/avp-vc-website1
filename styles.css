@@ -423,7 +423,7 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
 .section-subtitle {
     text-align: center;
     color: var(--light-text);
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-bottom: 80px;
     max-width: 600px;
     margin-left: auto;
@@ -587,7 +587,7 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
     color: var(--light-text);
     margin-bottom: 30px;
     line-height: 1.8;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 /* Resources Section */
@@ -653,7 +653,7 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
 }
 
 .about-text p {
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.8;
     margin-bottom: 25px;
     color: var(--light-text);
