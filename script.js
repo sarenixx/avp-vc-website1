@@ -160,8 +160,11 @@ if (heroBackgroundLogo) {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 const scrollY = window.scrollY;
-                // Move logo down as user scrolls (parallax effect)
-                heroBackgroundLogo.style.transform = `translateY(${scrollY * 0.4}px)`;
+                // Calculate rotation and scale based on scroll
+                const rotation = scrollY * 0.15; // Subtle rotation as you scroll
+                const scale = 1 + (scrollY * 0.0008); // Gradual zoom
+                // Move logo down as user scrolls (parallax effect) + rotate + zoom
+                heroBackgroundLogo.style.transform = `translateY(${scrollY * 0.4}px) rotate(${rotation}deg) scale(${scale})`;
                 ticking = false;
             });
             ticking = true;
