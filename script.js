@@ -152,6 +152,23 @@ sectionTitles.forEach(title => {
     observer.observe(title);
 });
 
+// Parallax effect on hero background logo
+const heroBackgroundLogo = document.querySelector('.hero-background-logo');
+if (heroBackgroundLogo) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollY = window.scrollY;
+                // Move logo down as user scrolls (parallax effect)
+                heroBackgroundLogo.style.transform = `translateY(${scrollY * 0.4}px)`;
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+}
+
 // Parallax effect on hero with smooth easing
 const hero = document.querySelector('.hero');
 if (hero) {
