@@ -112,6 +112,7 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
 }
 
 .nav-links a {
+    font-family: var(--accent);
     text-decoration: none;
     color: var(--text-color);
     font-size: 13px;
@@ -793,15 +794,15 @@ h3, .h3 { font-family: var(--headline-font); font-weight: 500; line-height: 1.3;
 p, .body-text { color: var(--secondary); }
 .body-large { font-size: 1.25rem; line-height: 1.7; }
 
-.section-label { font-family: var(--accent-font); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--secondary); }
-.tag { font-family: var(--accent-font); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; padding: 6px 14px; background: #f0f0f0; color: var(--primary); border-radius: 4px; display: inline-block; margin-right: 8px; }
-.metadata { font-family: var(--accent-font); font-size: 0.7rem; color: var(--secondary); text-transform: uppercase; }
+.section-label { font-family: var(--accent); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--secondary); }
+.tag { font-family: var(--accent); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; padding: 6px 14px; background: #f0f0f0; color: var(--primary); border-radius: 4px; display: inline-block; margin-right: 8px; }
+.metadata { font-family: var(--accent); font-size: 0.7rem; color: var(--secondary); text-transform: uppercase; }
 
-blockquote, .quote { font-family: var(--serif-font); font-size: 1.5rem; font-style: italic; line-height: 1.6; color: var(--primary); padding: 30px; margin: 30px 0; border-left: 4px solid var(--primary); background: #fafafa; }
+blockquote, .quote { font-family: var(--serif); font-size: 1.5rem; font-style: italic; line-height: 1.6; color: var(--primary); padding: 30px; margin: 30px 0; border-left: 4px solid var(--primary); background: #fafafa; }
 
 /* Keep button variants minimal — they coexist with existing .cta-button definitions */
-.btn-primary { font-family: var(--headline-font); }
-.btn-secondary { font-family: var(--accent-font); }
+.btn-primary { font-family: var(--headline); }
+.btn-secondary { font-family: var(--accent); }
 
 @media (max-width: 768px) {
     h1, .h1 { font-size: 2.5rem; }
