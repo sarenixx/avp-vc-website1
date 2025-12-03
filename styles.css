@@ -25,7 +25,9 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background: linear-gradient(to bottom, #f8f9fa, #64748b);
+    background-attachment: fixed;
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -730,207 +732,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =============================
-   Typography System (merged)
-   Appended from typography.html — typography variables and classes
-   Last rules may override previous declarations where names overlap.
+   Typography System (harmonized)
+   - Consolidates font imports and variable aliases
+   - Removes duplicate resets and avoids overriding more specific rules (e.g. .hero-content h1)
    ============================= */
 
-/* Reset and root variables (typography system) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 :root {
-    /* Typography Variables */
-    --headline: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --accent: 'Barlow Condensed', sans-serif;
-    --serif: 'Lora', Georgia, serif;
-    
-    /* Color Palette */
-    --primary-dark: #0a0a0a;
-    --primary: #1a1a1a;
-    --secondary: #666666;
-    --accent-color: #0066cc;
-    --light-bg: #f8f9fa;
+    /* Font families */
+    --headline-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --body-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --accent-font: 'Barlow Condensed', sans-serif;
+    --serif-font: 'Lora', Georgia, serif;
+
+    /* Aliases to existing site palette variables (avoid breaking selectors)
+       --primary/color mapping: keep existing --text-color as authoritative */
+    --primary: var(--text-color);
+    --secondary: var(--light-text);
+    --accent-color: var(--accent-color);
     --white: #ffffff;
-    --border: #e0e0e0;
+    --light-bg-alt: var(--light-bg);
+    --border: var(--border-color);
 }
 
+/* Ensure the page uses the consolidated body font (will inherit other body settings) */
 body {
-    font-family: var(--body);
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--primary);
-    background: var(--white);
+    font-family: var(--body-font);
 }
 
-/* Headlines - Inter (Regular weight for modern look) */
-h1, .h1 {
-    font-family: var(--headline);
-    font-size: 3.5rem;      /* 56px */
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-}
+/* Lightweight typography helpers (non-destructive) */
+h1, .h1 { font-family: var(--headline-font); font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; }
+h2, .h2 { font-family: var(--headline-font); font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; }
+h3, .h3 { font-family: var(--headline-font); font-weight: 500; line-height: 1.3; }
 
-h2, .h2 {
-    font-family: var(--headline);
-    font-size: 3rem;        /* 48px */
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 1rem;
-}
+p, .body-text { color: var(--secondary); }
+.body-large { font-size: 1.25rem; line-height: 1.7; }
 
-h3, .h3 {
-    font-family: var(--headline);
-    font-size: 2rem;        /* 32px */
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 0.75rem;
-}
+.section-label { font-family: var(--accent-font); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--secondary); }
+.tag { font-family: var(--accent-font); font-size: 0.7rem; font-weight: 500; text-transform: uppercase; padding: 6px 14px; background: #f0f0f0; color: var(--primary); border-radius: 4px; display: inline-block; margin-right: 8px; }
+.metadata { font-family: var(--accent-font); font-size: 0.7rem; color: var(--secondary); text-transform: uppercase; }
 
-h4, .h4 {
-    font-family: var(--headline);
-    font-size: 1.5rem;      /* 24px */
-    font-weight: 500;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-}
+blockquote, .quote { font-family: var(--serif-font); font-size: 1.5rem; font-style: italic; line-height: 1.6; color: var(--primary); padding: 30px; margin: 30px 0; border-left: 4px solid var(--primary); background: #fafafa; }
 
-/* Body Text - Inter */
-p, .body-text {
-    font-family: var(--body);
-    font-size: 1rem;        /* 16px */
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--secondary);
-    margin-bottom: 1rem;
-}
+/* Keep button variants minimal — they coexist with existing .cta-button definitions */
+.btn-primary { font-family: var(--headline-font); }
+.btn-secondary { font-family: var(--accent-font); }
 
-.body-large {
-    font-size: 1.25rem;     /* 20px */
-    line-height: 1.7;
-}
-
-/* Section Labels - Barlow Condensed (USE SPARINGLY!) */
-.section-label {
-    font-family: var(--accent);
-    font-size: 0.75rem;     /* 12px */
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--secondary);
-    display: block;
-    margin-bottom: 1rem;
-}
-
-/* Tags - Barlow Condensed */
-.tag {
-    font-family: var(--accent);
-    font-size: 0.7rem;      /* 11px */
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 6px 14px;
-    background: #f0f0f0;
-    color: var(--primary);
-    border-radius: 4px;
-    display: inline-block;
-    margin-right: 8px;
-    margin-bottom: 8px;
-}
-
-/* Metadata - Barlow Condensed */
-.metadata {
-    font-family: var(--accent);
-    font-size: 0.7rem;      /* 11px */
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--secondary);
-}
-
-/* Quotes - Lora Serif */
-blockquote, .quote {
-    font-family: var(--serif);
-    font-size: 1.5rem;      /* 24px */
-    font-style: italic;
-    line-height: 1.6;
-    color: var(--primary);
-    padding: 30px;
-    margin: 30px 0;
-    border-left: 4px solid var(--primary);
-    background: #fafafa;
-}
-
-/* Buttons - typography variants (co-exist with existing .cta-button/.secondary-button) */
-.btn-primary {
-    font-family: var(--headline);
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 14px 32px;
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.btn-secondary {
-    font-family: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 12px 28px;
-    background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background: var(--primary);
-    color: var(--white);
-}
-
-/* Responsive Typography adjustments */
 @media (max-width: 768px) {
-    h1, .h1 {
-        font-size: 2.5rem;  /* 40px */
-    }
-
-    h2, .h2 {
-        font-size: 2rem;    /* 32px */
-    }
-
-    h3, .h3 {
-        font-size: 1.5rem;  /* 24px */
-    }
-
-    .body-large {
-        font-size: 1.125rem; /* 18px */
-    }
-
-    blockquote, .quote {
-        font-size: 1.25rem;
-        padding: 20px;
-    }
+    h1, .h1 { font-size: 2.5rem; }
+    h2, .h2 { font-size: 2rem; }
+    h3, .h3 { font-size: 1.5rem; }
+    .body-large { font-size: 1.125rem; }
+    blockquote, .quote { font-size: 1.25rem; padding: 20px; }
 }
