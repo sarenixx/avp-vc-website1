@@ -14,26 +14,26 @@
     --serif: 'Lora', Georgia, serif;
     
     /* Color Palette */
-    --primary-dark: #0a0a0a;
-    --primary: #1a1a1a;
-    --secondary: #666666;
-    --accent-color: #0066cc;
-    --light-bg: #f8f9fa;
     --white: #ffffff;
-    --border: #e0e0e0;
-    
-    /* Brand Colors (aliases) */
-    --dark-gray: #1a1a1a;
+    --light-bg: #f8f9fa;
     --steel-gray: #64748b;
-    --light-gray: #f8f9fa;
+    --dark-gray: #1a1a1a;
+    --primary-dark: #0a0a0a;
+    
+    /* Semantic Color Mappings */
+    --primary: #1a1a1a;
+    --secondary: #64748b;
+    --border: #f8f9fa;
     
     /* Legacy mappings for compatibility */
     --primary-color: #0a0a0a;
     --secondary-color: #1a1a1a;
+    --accent-color: #64748b;
     --text-color: #1a1a1a;
     --light-text: #64748b;
     --bg-color: #ffffff;
     --border-color: #f8f9fa;
+    --light-gray: #f8f9fa;
 }
 
 html {
