@@ -160,8 +160,8 @@ if (heroBackgroundLogo) {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 const scrollY = window.scrollY;
-                // Start zoomed in (2x), zoom out as you scroll
-                const scale = Math.max(1, 2 - (scrollY * 0.002));
+                // Start zoomed in (5x), zoom out as you scroll
+                const scale = Math.max(1, 5 - (scrollY * 0.008));
                 // Move logo down as user scrolls (parallax effect) + zoom out
                 heroBackgroundLogo.style.transform = `translateY(${scrollY * 0.4}px) scale(${scale})`;
                 ticking = false;
