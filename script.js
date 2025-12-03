@@ -162,10 +162,8 @@ if (heroBackgroundLogo) {
                 const scrollY = window.scrollY;
                 // Start zoomed in (2x), zoom out as you scroll
                 const scale = Math.max(1, 2 - (scrollY * 0.002));
-                // Start rotated (45deg), rotate to normal as you scroll
-                const rotation = Math.max(0, 45 - (scrollY * 0.09));
-                // Move logo down as user scrolls (parallax effect) + zoom out + rotate
-                heroBackgroundLogo.style.transform = `translateY(${scrollY * 0.4}px) scale(${scale}) rotate(${rotation}deg)`;
+                // Move logo down as user scrolls (parallax effect) + zoom out
+                heroBackgroundLogo.style.transform = `translateY(${scrollY * 0.4}px) scale(${scale})`;
                 ticking = false;
             });
             ticking = true;
