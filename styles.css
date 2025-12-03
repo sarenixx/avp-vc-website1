@@ -274,9 +274,9 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
 }
 
 .cta-button:hover {
-    background-color: #00b8d4;
+    background-color: #64748b;
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(100, 116, 139, 0.3);
 }
 
 .secondary-button {
