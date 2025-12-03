@@ -45,7 +45,7 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: var(--primary);
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 30%, rgba(100, 116, 139, 0.15) 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 30%, rgba(100, 116, 139, 0.4) 100%);
     background-attachment: fixed;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
