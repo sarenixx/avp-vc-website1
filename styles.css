@@ -178,7 +178,8 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
     );
     border-radius: 50%;
     filter: blur(80px);
-    animation: orbFloat 30s ease-in-out infinite;
+    opacity: 0;
+    animation: float 30s ease-in-out infinite;
 }
 
 @keyframes orbFloat {
