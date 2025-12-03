@@ -313,9 +313,9 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
 }
 
 .secondary-button:hover {
-    background-color: var(--text-color);
-    color: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #64748b;
+    color: #000;
+    box-shadow: 0 10px 30px rgba(100, 116, 139, 0.3);
 }
 
 /* Animations */
@@ -761,6 +761,20 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
     background-color: var(--primary-color);
     color: #fff;
     padding: 80px 40px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 120%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(100, 116, 139, 0.1) 0%, transparent 70%);
+    transform: translateY(var(--parallax-y, 0));
+    transition: transform 0.1s ease-out;
 }
 
 .footer-logo {
@@ -778,6 +792,19 @@ h4 { font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; line-height: 1.
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 60px;
     margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.footer-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .footer-section h4 {
