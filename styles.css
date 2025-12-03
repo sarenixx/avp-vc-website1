@@ -70,6 +70,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
 }
 
+.logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -566,6 +573,16 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-color);
     color: #fff;
     padding: 80px 40px 40px;
+}
+
+.footer-logo {
+    margin-bottom: 50px;
+}
+
+.logo-img-footer {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .footer-content {
