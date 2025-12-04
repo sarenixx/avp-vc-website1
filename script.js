@@ -265,42 +265,17 @@ window.addEventListener('load', () => {
 // Initialize body
 document.body.style.opacity = '0.99';
 
-// Footer parallax and fade-in animation
+// Footer mask reveal animation
 const footer = document.querySelector('.footer');
-const footerSections = document.querySelectorAll('.footer-section');
 
-// Intersection Observer for footer sections
-const footerObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
+const footerRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-            }, index * 100); // Stagger the animations
+            footer.classList.add('revealed');
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
-footerSections.forEach(section => {
-    footerObserver.observe(section);
-});
-
-// Footer background parallax effect on scroll
-let lastScrollY = window.scrollY;
-window.addEventListener('scroll', () => {
-    if (footer) {
-        const footerRect = footer.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Check if footer is in viewport
-        if (footerRect.top < windowHeight && footerRect.bottom > 0) {
-            const scrollProgress = (windowHeight - footerRect.top) / (windowHeight + footerRect.height);
-            const parallaxY = scrollProgress * 100;
-            
-            requestAnimationFrame(() => {
-                const beforeElement = footer.querySelector('::before') || footer;
-                footer.style.setProperty('--parallax-y', `${parallaxY}px`);
-            });
-        }
-    }
-    lastScrollY = window.scrollY;
-});
+if (footer) {
+    footerRevealObserver.observe(footer);
+}
